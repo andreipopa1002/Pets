@@ -11,15 +11,21 @@ final class BreedService {
 
 extension BreedService: BreedServiceInterface {
     func search(breed: String, completion:@escaping BreedSearchCompletion) {
-        let stringUrl = Environment.baseUrl + "/v1/breeds/search"
-        let request = URLRequest(url: URL(string: stringUrl)!)
+        var urlComponents = URLComponents(string: Environment.baseUrl + "/v1/breeds/search")!
+        urlComponents.queryItems = [URLQueryItem(name: "q", value: breed)]
+        var request = URLRequest(url: urlComponents.url!)
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+
         fetchBreeds(request: request) { result in
             switch result {
             case .success(let tuple):
                 completion(.success(tuple.model ?? []))
-                break
-            case .failure:
-                break
+            case .failure(let error):
+                if case .networkError(let nError) = error {
+                    completion(.failure(nError))
+                } else {
+                    completion(.failure(error))
+                }
             }
         }
     }

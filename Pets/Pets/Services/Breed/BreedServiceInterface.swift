@@ -1,6 +1,6 @@
 import Foundation
 
-struct Breed: Decodable {
+struct Breed: Decodable, Equatable {
     let id: String
     let name: String
     let temperament: String

@@ -22,6 +22,9 @@
 		25B5E22A2453B923003695E6 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 25B5E2292453B923003695E6 /* Kingfisher */; };
 		25B5E22C24545E1C003695E6 /* PetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25B5E22B24545E1C003695E6 /* PetTableViewCell.swift */; };
 		25B5E22E24545E61003695E6 /* TemperamentCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25B5E22D24545E61003695E6 /* TemperamentCollectionViewCell.swift */; };
+		25B5E234245462EA003695E6 /* MockDecodingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25B5E233245462EA003695E6 /* MockDecodingService.swift */; };
+		25B5E2362454634B003695E6 /* BreedServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25B5E2352454634B003695E6 /* BreedServiceTests.swift */; };
+		25B5E23A24546D95003695E6 /* DescriptiveError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25B5E23924546D95003695E6 /* DescriptiveError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +55,9 @@
 		25B5E2262453B38A003695E6 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		25B5E22B24545E1C003695E6 /* PetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetTableViewCell.swift; sourceTree = "<group>"; };
 		25B5E22D24545E61003695E6 /* TemperamentCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperamentCollectionViewCell.swift; sourceTree = "<group>"; };
+		25B5E233245462EA003695E6 /* MockDecodingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDecodingService.swift; sourceTree = "<group>"; };
+		25B5E2352454634B003695E6 /* BreedServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedServiceTests.swift; sourceTree = "<group>"; };
+		25B5E23924546D95003695E6 /* DescriptiveError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptiveError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +118,7 @@
 		252AEF6924539752004ED119 /* PetsTests */ = {
 			isa = PBXGroup;
 			children = (
+				25B5E22F24546249003695E6 /* Services */,
 				252AEF6A24539752004ED119 /* PetsTests.swift */,
 				252AEF6C24539752004ED119 /* Info.plist */,
 			);
@@ -167,6 +174,32 @@
 				25B5E2242453A2EE003695E6 /* BreedService.swift */,
 			);
 			path = Breed;
+			sourceTree = "<group>";
+		};
+		25B5E22F24546249003695E6 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				25B5E23824546D79003695E6 /* Mocks */,
+				25B5E23724546D49003695E6 /* Breed */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		25B5E23724546D49003695E6 /* Breed */ = {
+			isa = PBXGroup;
+			children = (
+				25B5E2352454634B003695E6 /* BreedServiceTests.swift */,
+			);
+			path = Breed;
+			sourceTree = "<group>";
+		};
+		25B5E23824546D79003695E6 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				25B5E233245462EA003695E6 /* MockDecodingService.swift */,
+				25B5E23924546D95003695E6 /* DescriptiveError.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -294,7 +327,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25B5E2362454634B003695E6 /* BreedServiceTests.swift in Sources */,
+				25B5E23A24546D95003695E6 /* DescriptiveError.swift in Sources */,
 				252AEF6B24539752004ED119 /* PetsTests.swift in Sources */,
+				25B5E234245462EA003695E6 /* MockDecodingService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
