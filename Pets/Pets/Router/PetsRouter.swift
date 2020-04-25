@@ -1,11 +1,12 @@
 import Foundation
 import UIKit
 
-protocol ProductRouterInterface {
+protocol PetsRouterInterface {
     func present(error: Error)
+    func open(url: URL)
 }
 
-final class ProductRouter {
+final class PetsRouter {
     private let errorViewFactory: ErrorViewControllerFactoryInterface
     weak var view: UIViewController?
 
@@ -14,7 +15,7 @@ final class ProductRouter {
     }
 }
 
-extension ProductRouter: ProductRouterInterface {
+extension PetsRouter: PetsRouterInterface {
     func present(error: Error) {
         view?.present(
             errorViewFactory.viewController(forError: error),
@@ -22,6 +23,10 @@ extension ProductRouter: ProductRouterInterface {
             completion: nil
         )
 
+    }
+
+    func open(url: URL) {
+        
     }
 }
 

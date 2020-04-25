@@ -4,7 +4,7 @@ import UIKit
 struct PetViewModel {
     let name: String
     let wikiButtonAction: (() -> ())?
-    let image: ((UIImage) -> ())
+    let image: ((UIImage) -> ())?
     let lifeSpan: String
     let temperament: [String]
 }

@@ -4,7 +4,8 @@ struct Breed: Decodable, Equatable {
     let id: String
     let name: String
     let temperament: String
-    let wikipediaUrl: String
+    let wikipediaUrl: URL?
+    let lifeSpan: String
 }
 
 typealias BreedSearchResult = Result<[Breed], Error>

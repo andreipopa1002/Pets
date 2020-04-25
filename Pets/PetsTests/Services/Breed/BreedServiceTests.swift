@@ -100,7 +100,8 @@ extension Breed {
         return Breed(id: "",
                      name: "",
                      temperament: "",
-                     wikipediaUrl: ""
+                     wikipediaUrl: URL(string:"www.a.c")!,
+                     lifeSpan: ""
         )
     }
 }
