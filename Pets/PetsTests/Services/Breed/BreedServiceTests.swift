@@ -95,7 +95,7 @@ private extension BreedServiceTests {
     }
 }
 
-private extension Breed {
+extension Breed {
     static var stub: Breed {
         return Breed(id: "",
                      name: "",
