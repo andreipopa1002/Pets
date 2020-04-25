@@ -4,13 +4,24 @@ protocol PetsPresenterInterface {
     func search(breed: String)
 }
 
-final class PetsPresenter {
-    let interactor: PetsInteractorInterface
-    let router: PetsRouterInterface
+protocol PetsPresenterOutput: AnyObject {
+    func show(viewModels: [PetViewModel])
+}
 
-    init(interactor: PetsInteractorInterface, router: PetsRouterInterface) {
+final class PetsPresenter {
+    private let interactor: PetsInteractorInterface
+    private let router: PetsRouterInterface
+    private let viewModelBuilder: ViewModelBuilderInterface
+    weak var output: PetsPresenterOutput?
+
+    init(
+        interactor: PetsInteractorInterface,
+        router: PetsRouterInterface,
+        viewModelBuilder: ViewModelBuilderInterface
+    ) {
         self.interactor = interactor
         self.router = router
+        self.viewModelBuilder = viewModelBuilder
     }
 }
 
@@ -22,10 +33,16 @@ extension PetsPresenter: PetsPresenterInterface {
 
 extension PetsPresenter: PetsInteractorOutputInterface {
     func didFetched(breeds: [Breed]) {
+        let viewModels = viewModelBuilder.buildViewModel(fromBreeds: breeds)
+        DispatchQueue.main.async {
+            self.output?.show(viewModels: viewModels)
+        }
     }
 
     func didFailedFetch(error: Error) {
-        router.present(error: error)
+        DispatchQueue.main.async {
+            self.router.present(error: error)
+        }
     }
 
 
