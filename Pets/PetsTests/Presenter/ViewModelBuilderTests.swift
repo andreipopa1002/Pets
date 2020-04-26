@@ -26,7 +26,7 @@ final class ViewModelBuilderTests: XCTestCase {
 
     func test_Given2Breeds_WhenBuildViewModel_ThenViewModel2LifeSpans() {
         let viewModel = builder.buildViewModel(fromBreeds: stubbedBreeds())
-        XCTAssertEqual(viewModel.map{$0.lifeSpan}, ["lifeSpan1", "lifeSpan2"])
+        XCTAssertEqual(viewModel.map{$0.lifeSpan}, ["Life span:\nlifeSpan1", "Life span:\nlifeSpan2"])
     }
 
     func test_Given2Breeds_WhenBuildViewModel_ThenViewModel2Temperament() {
@@ -53,14 +53,14 @@ private extension ViewModelBuilderTests {
     func stubbedBreeds() -> [Breed] {
         return [
             Breed(
-                id: "id1",
+                id: 0,
                 name: "name1",
                 temperament: "  temp11 ,temp12, temp13    ",
                 wikipediaUrl: URL(string: "www.url1.com")!,
                 lifeSpan: "lifeSpan1"
             ),
             Breed(
-                id: "id2",
+                id: 1,
                 name: "name2",
                 temperament: "    temp21     , temp22",
                 wikipediaUrl: nil,

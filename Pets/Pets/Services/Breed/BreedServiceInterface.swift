@@ -1,7 +1,14 @@
 import Foundation
 
 struct Breed: Decodable, Equatable {
-    let id: String
+    private enum CodingKeys: String, CodingKey {
+        case id, name, temperament
+        case wikipediaUrl = "wikipedia_ulr"
+        case lifeSpan = "life_span"
+
+    }
+
+    let id: Int
     let name: String
     let temperament: String
     let wikipediaUrl: URL?

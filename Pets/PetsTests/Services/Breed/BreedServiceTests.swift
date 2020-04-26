@@ -97,7 +97,7 @@ private extension BreedServiceTests {
 
 extension Breed {
     static var stub: Breed {
-        return Breed(id: "",
+        return Breed(id: 0,
                      name: "",
                      temperament: "",
                      wikipediaUrl: URL(string:"www.a.c")!,

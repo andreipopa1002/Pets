@@ -19,7 +19,7 @@ final class ViewModelBuilder: ViewModelBuilderInterface {
                 name: $0.name,
                 wikiButtonAction: wikiAction(forBreed: $0),
                 image: nil,
-                lifeSpan: $0.lifeSpan,
+                lifeSpan: "Life span:\n" + $0.lifeSpan,
                 temperament: temperament(fromString: $0.temperament)
             ))
         }
