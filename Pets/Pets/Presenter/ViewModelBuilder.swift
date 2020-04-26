@@ -5,20 +5,27 @@ protocol ViewModelBuilderInterface {
     func buildViewModel(fromBreeds breeds: [Breed]) -> [PetViewModel]
 }
 
-final class ViewModelBuilder: ViewModelBuilderInterface {
-    private var router: PetsRouterInterface
+final class ViewModelBuilder {
+    private let router: PetsRouterInterface
+    private let interactor: PetsInteractorInterface
 
-    init(router: PetsRouterInterface) {
+    init(
+        router: PetsRouterInterface,
+        interactor: PetsInteractorInterface
+    ) {
         self.router = router
+        self.interactor = interactor
     }
+}
 
+extension ViewModelBuilder: ViewModelBuilderInterface {
     func buildViewModel(fromBreeds breeds: [Breed]) -> [PetViewModel] {
         var viewModels = [PetViewModel]()
         breeds.forEach {
             viewModels.append(PetViewModel(
                 name: $0.name,
                 wikiButtonAction: wikiAction(forBreed: $0),
-                image: nil,
+                imageViewModel: imageViewModel(forBreedId: $0.id),
                 lifeSpan: "Life span:\n" + $0.lifeSpan,
                 temperament: temperament(fromString: $0.temperament)
             ))
@@ -28,7 +35,15 @@ final class ViewModelBuilder: ViewModelBuilderInterface {
 }
 
 private extension ViewModelBuilder {
-    func temperament(fromString temperament: String) -> [String] {
+    func imageViewModel(forBreedId breedId: Int) -> PetViewModel.ImageViewModel {
+        PetViewModel.ImageViewModel(
+            placeholder: UIImage(named: "pet_placeholder")!,
+            source: interactor.imageSource(forBreedId: breedId)
+        )
+    }
+
+    func temperament(fromString temperament: String?) -> [String] {
+        guard let temperament = temperament else { return [] }
         let temperamentArray = temperament.split(separator: Character(",")).map {String($0)}
         return temperamentArray.map {$0.trimmingCharacters(in: CharacterSet.whitespaces)}
     }

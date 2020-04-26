@@ -4,18 +4,24 @@ import XCTest
 final class PetsInteractorTests: XCTestCase {
     private var interactor: PetsInteractor!
     private var mockedBreedService: MockBreedService!
+    private var mockedImageService: MockPublicImageService!
     private var mockedOutput: MockInteractorOutput!
 
     override func setUpWithError() throws {
         mockedBreedService = MockBreedService()
+        mockedImageService = MockPublicImageService()
         mockedOutput = MockInteractorOutput()
-        interactor = PetsInteractor(breedService: mockedBreedService)
+        interactor = PetsInteractor(
+            breedService: mockedBreedService,
+            imageService: mockedImageService
+        )
         interactor.output = mockedOutput
     }
 
     override func tearDownWithError() throws {
         interactor = nil
         mockedBreedService = nil
+        mockedImageService = nil
         mockedOutput = nil
     }
 
@@ -42,9 +48,6 @@ final class PetsInteractorTests: XCTestCase {
         mockedBreedService.spySearchBreedCompletion?(.failure(DescriptiveError(customDescription: "my error")))
         XCTAssertEqual(mockedOutput.spyDidFailedFetch.map {$0.localizedDescription}, ["my error"])
     }
-
-
-
 }
 
 private class MockBreedService: BreedServiceInterface {
@@ -68,6 +71,14 @@ private class MockInteractorOutput: PetsInteractorOutputInterface {
     func didFailedFetch(error: Error) {
         spyDidFailedFetch.append(error)
     }
+}
 
+private class MockPublicImageService: PublicImagesServiceInterface {
+    private(set) var spyImageSource = [Int]()
 
+    func imageSource(forBreedId breedId: Int) -> PublicImageSource {
+        spyImageSource.append(breedId)
+
+        return PublicImageSource.stub
+    }
 }

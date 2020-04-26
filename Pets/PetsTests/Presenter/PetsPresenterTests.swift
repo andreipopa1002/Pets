@@ -71,13 +71,6 @@ final class PetsPresenterTests: XCTestCase {
     }
 }
 
-private class MockPetsInteractor: PetsInteractorInterface {
-    private(set) var spySearchBreed = [String]()
-    func search(breed: String) {
-        spySearchBreed.append(breed)
-    }
-}
-
 private class MockViewModelBuilder: ViewModelBuilderInterface {
     private(set) var spyBreeds = [[Breed]]()
     var stubbedViewModel = [PetViewModel]()
@@ -108,9 +101,19 @@ extension PetViewModel: Equatable {
         return PetViewModel(
             name: "",
             wikiButtonAction: nil,
-            image: nil,
+            imageViewModel: .stub,
             lifeSpan: "",
             temperament: []
         )
     }
 }
+
+extension PetViewModel.ImageViewModel {
+    static var stub: PetViewModel.ImageViewModel {
+        return PetViewModel.ImageViewModel(
+            placeholder: UIImage(),
+            source: .stub
+        )
+    }
+}
+

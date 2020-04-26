@@ -5,12 +5,11 @@ struct Breed: Decodable, Equatable {
         case id, name, temperament
         case wikipediaUrl = "wikipedia_ulr"
         case lifeSpan = "life_span"
-
     }
 
     let id: Int
     let name: String
-    let temperament: String
+    let temperament: String?
     let wikipediaUrl: URL?
     let lifeSpan: String
 }

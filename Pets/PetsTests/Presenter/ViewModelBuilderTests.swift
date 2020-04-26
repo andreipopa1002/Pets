@@ -1,18 +1,25 @@
 import XCTest
+import Kingfisher
 @testable import Pets
 
 final class ViewModelBuilderTests: XCTestCase {
     private var builder: ViewModelBuilder!
     private var mockedRouter: MockPetsRouter!
+    private var mockedInteractor: MockPetsInteractor!
 
     override func setUpWithError() throws {
         mockedRouter = MockPetsRouter()
-        builder = ViewModelBuilder(router: mockedRouter)
+        mockedInteractor = MockPetsInteractor()
+        builder = ViewModelBuilder(
+            router: mockedRouter,
+            interactor: mockedInteractor
+        )
     }
 
     override func tearDownWithError() throws {
         builder = nil
         mockedRouter = nil
+        mockedInteractor = nil
     }
 
     func test_GivenNoBreed_WhenBuildViewModel_ThenEmptyViewModel() {
@@ -46,6 +53,30 @@ final class ViewModelBuilderTests: XCTestCase {
         let viewModelWithWikiAction = viewModel.compactMap {$0.wikiButtonAction}
         viewModelWithWikiAction.forEach {$0()}
         XCTAssertEqual(mockedRouter.spyOpenUrl, [URL(string: "www.url1.com")!])
+    }
+
+    func test_Given2Breeds_WhenBuildViewModel_ThenImagePlaceHolder() {
+        let viewModel = builder.buildViewModel(fromBreeds: stubbedBreeds())
+        let imagePlaceHolders = viewModel.map {$0.imageViewModel.placeholder}
+        XCTAssertEqual(
+            imagePlaceHolders,
+            [UIImage(named: "pet_placeholder")!, UIImage(named: "pet_placeholder")!]
+        )
+    }
+
+    func test_Given2Breeds_WhenBuildViewModel_ThenInteractorImageSourceWithId() {
+        _ = builder.buildViewModel(fromBreeds: stubbedBreeds())
+
+        XCTAssertEqual(mockedInteractor.spyImageSource, [0, 1])
+    }
+
+    func test_Given2Breeds_WhenBuildViewModel_ThenSourceUrlFromInteractor() {
+        let viewModel = builder.buildViewModel(fromBreeds: stubbedBreeds())
+        let imageSources = viewModel.map {$0.imageViewModel.source.url}
+        XCTAssertEqual(
+            imageSources, [PublicImageSource.stub.url,
+                           PublicImageSource.stub.url]
+        )
     }
 }
 
