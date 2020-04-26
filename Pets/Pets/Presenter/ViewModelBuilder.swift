@@ -44,6 +44,7 @@ private extension ViewModelBuilder {
 
     func temperament(fromString temperament: String?) -> [String] {
         guard let temperament = temperament else { return [] }
+        
         let temperamentArray = temperament.split(separator: Character(",")).map {String($0)}
         return temperamentArray.map {$0.trimmingCharacters(in: CharacterSet.whitespaces)}
     }

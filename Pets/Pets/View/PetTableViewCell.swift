@@ -19,6 +19,7 @@ final class PetTableViewCell: UITableViewCell {
     @IBOutlet private weak var wikiButton: UIButton!
     @IBOutlet private weak var petImageView: UIImageView!
     @IBOutlet private weak var lifeSpanLabel: UILabel!
+    @IBOutlet weak var temperamentStackView: UIStackView!
     @IBOutlet private weak var temperamentCollectionView: UICollectionView!
     private var viewModel: PetViewModel?
 
@@ -26,15 +27,13 @@ final class PetTableViewCell: UITableViewCell {
         nameLabel.text = viewModel.name
         lifeSpanLabel.text = viewModel.lifeSpan
         wikiButton.isHidden = viewModel.wikiButtonAction == nil ? true : false
-        temperamentCollectionView.isHidden = viewModel.temperament.count == 0 ? true : false
+        temperamentStackView.isHidden = viewModel.temperament.count == 0 ? true : false
         temperamentCollectionView.dataSource = self
         let modifier = viewModel.imageViewModel.source.modifiers
         petImageView.kf.setImage(
             with: viewModel.imageViewModel.source.url,
             placeholder: viewModel.imageViewModel.placeholder,
-            options: modifier, completionHandler: { result in
-                print("result\(result)")
-            }
+            options: modifier
         )
 
         self.viewModel = viewModel
