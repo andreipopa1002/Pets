@@ -41,6 +41,7 @@
 		25C2701124561549009FFEE5 /* ImageRequestModifierTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C2701024561549009FFEE5 /* ImageRequestModifierTests.swift */; };
 		25C27013245616A3009FFEE5 /* AuthorizationInjectorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C27012245616A3009FFEE5 /* AuthorizationInjectorTests.swift */; };
 		25C2701624562A28009FFEE5 /* PetsRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C2701524562A28009FFEE5 /* PetsRouterTests.swift */; };
+		25C2701824562EF9009FFEE5 /* BreedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C2701724562EF9009FFEE5 /* BreedTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +91,7 @@
 		25C2701024561549009FFEE5 /* ImageRequestModifierTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRequestModifierTests.swift; sourceTree = "<group>"; };
 		25C27012245616A3009FFEE5 /* AuthorizationInjectorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationInjectorTests.swift; sourceTree = "<group>"; };
 		25C2701524562A28009FFEE5 /* PetsRouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetsRouterTests.swift; sourceTree = "<group>"; };
+		25C2701724562EF9009FFEE5 /* BreedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -268,6 +270,7 @@
 			isa = PBXGroup;
 			children = (
 				25B5E2352454634B003695E6 /* BreedServiceTests.swift */,
+				25C2701724562EF9009FFEE5 /* BreedTests.swift */,
 			);
 			path = Breed;
 			sourceTree = "<group>";
@@ -438,6 +441,7 @@
 				250C315C24549090002D458E /* ViewModelBuilderTests.swift in Sources */,
 				250C31522454808B002D458E /* PetsInteractorTests.swift in Sources */,
 				25BA67AF24561028007477D1 /* PublicImagesServiceTests.swift in Sources */,
+				25C2701824562EF9009FFEE5 /* BreedTests.swift in Sources */,
 				252AEF6B24539752004ED119 /* PetsTests.swift in Sources */,
 				250C315724548BA5002D458E /* PetsPresenterTests.swift in Sources */,
 				25BA67AC2455F1AF007477D1 /* MockInteractor.swift in Sources */,
