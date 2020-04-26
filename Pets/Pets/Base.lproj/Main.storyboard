@@ -168,17 +168,35 @@
                                     </tableView>
                                 </subviews>
                             </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vc4-u4-6Jx" userLabel="LoadingView">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="DFK-sU-VBe">
+                                        <rect key="frame" x="197" y="399" width="20" height="20"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="0.25" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="DFK-sU-VBe" firstAttribute="centerY" secondItem="vc4-u4-6Jx" secondAttribute="centerY" id="Ozo-bP-gZf"/>
+                                    <constraint firstItem="DFK-sU-VBe" firstAttribute="centerX" secondItem="vc4-u4-6Jx" secondAttribute="centerX" id="pdg-bf-hzv"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="LYf-cz-EWa" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="44" id="3XV-ts-oq0"/>
                             <constraint firstItem="LYf-cz-EWa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="E6f-Mz-Oyj"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="LYf-cz-EWa" secondAttribute="bottom" id="UTt-B3-vTf"/>
+                            <constraint firstItem="vc4-u4-6Jx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="XQb-a5-7cl"/>
+                            <constraint firstItem="vc4-u4-6Jx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="l5r-eO-0dZ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="vc4-u4-6Jx" secondAttribute="bottom" id="oyw-dd-d3x"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="LYf-cz-EWa" secondAttribute="trailing" constant="8" id="plA-Du-9kW"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vc4-u4-6Jx" secondAttribute="trailing" id="s7U-wX-lNw"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="loadingView" destination="vc4-u4-6Jx" id="Aio-Qp-GhA"/>
                         <outlet property="searchBar" destination="2Uv-ql-iew" id="uht-Nz-z3b"/>
                         <outlet property="tableView" destination="Agp-Jr-oVC" id="KWq-5v-PXP"/>
                     </connections>

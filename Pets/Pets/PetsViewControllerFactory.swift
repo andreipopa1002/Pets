@@ -12,7 +12,10 @@ final class PetsViewControllerFactory {
             imageService: PublicImagesService(requestModifier: ImageRequestModifier(apiKey: Environment.apiKey)
             )
         )
-        let router = PetsRouter(errorViewFactory: ErrorViewControllerFactory())
+        let router = PetsRouter(
+            errorViewFactory: ErrorViewControllerFactory(),
+            urlOpenner: UIApplication.shared
+        )
         let viewModelBuilder = ViewModelBuilder(router: router, interactor: interactor)
         let presenter = PetsPresenter(
             interactor: interactor,

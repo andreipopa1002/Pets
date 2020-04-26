@@ -5,15 +5,25 @@ final class ViewController: UIViewController {
 
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var loadingView: UIView!
     private var viewModels = [PetViewModel]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        loadingView.isHidden = true
     }
 }
 
 extension ViewController: PetsPresenterOutput {
+    func startLoading() {
+        loadingView.isHidden = false
+    }
+
+    func stopLoading() {
+        loadingView.isHidden = true
+    }
+
     func show(viewModels: [PetViewModel]) {
         self.viewModels = viewModels
         self.tableView.reloadData()
