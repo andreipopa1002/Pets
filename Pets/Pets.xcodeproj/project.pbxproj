@@ -40,6 +40,7 @@
 		25C2700F245614D7009FFEE5 /* ImageRequestModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C2700E245614D7009FFEE5 /* ImageRequestModifier.swift */; };
 		25C2701124561549009FFEE5 /* ImageRequestModifierTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C2701024561549009FFEE5 /* ImageRequestModifierTests.swift */; };
 		25C27013245616A3009FFEE5 /* AuthorizationInjectorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C27012245616A3009FFEE5 /* AuthorizationInjectorTests.swift */; };
+		25C2701624562A28009FFEE5 /* PetsRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C2701524562A28009FFEE5 /* PetsRouterTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +89,7 @@
 		25C2700E245614D7009FFEE5 /* ImageRequestModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRequestModifier.swift; sourceTree = "<group>"; };
 		25C2701024561549009FFEE5 /* ImageRequestModifierTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRequestModifierTests.swift; sourceTree = "<group>"; };
 		25C27012245616A3009FFEE5 /* AuthorizationInjectorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationInjectorTests.swift; sourceTree = "<group>"; };
+		25C2701524562A28009FFEE5 /* PetsRouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetsRouterTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +178,7 @@
 		252AEF6924539752004ED119 /* PetsTests */ = {
 			isa = PBXGroup;
 			children = (
+				25C2701424562A13009FFEE5 /* Router */,
 				250C315324548A8F002D458E /* Presenter */,
 				250C315024548076002D458E /* Interactor */,
 				25B5E22F24546249003695E6 /* Services */,
@@ -285,6 +288,14 @@
 				25C2701024561549009FFEE5 /* ImageRequestModifierTests.swift */,
 			);
 			path = "Public image";
+			sourceTree = "<group>";
+		};
+		25C2701424562A13009FFEE5 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				25C2701524562A28009FFEE5 /* PetsRouterTests.swift */,
+			);
+			path = Router;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -420,6 +431,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				25B5E2362454634B003695E6 /* BreedServiceTests.swift in Sources */,
+				25C2701624562A28009FFEE5 /* PetsRouterTests.swift in Sources */,
 				25B5E23A24546D95003695E6 /* DescriptiveError.swift in Sources */,
 				25C27013245616A3009FFEE5 /* AuthorizationInjectorTests.swift in Sources */,
 				25C2701124561549009FFEE5 /* ImageRequestModifierTests.swift in Sources */,
