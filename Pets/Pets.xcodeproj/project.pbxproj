@@ -17,7 +17,7 @@
 		250C31612454F4CF002D458E /* PetsViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250C31602454F4CF002D458E /* PetsViewControllerFactory.swift */; };
 		250C31632454F8E4002D458E /* AuthorizationInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250C31622454F8E4002D458E /* AuthorizationInjector.swift */; };
 		252AEF5424539750004ED119 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 252AEF5324539750004ED119 /* AppDelegate.swift */; };
-		252AEF5824539750004ED119 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 252AEF5724539750004ED119 /* ViewController.swift */; };
+		252AEF5824539750004ED119 /* PetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 252AEF5724539750004ED119 /* PetsViewController.swift */; };
 		252AEF5B24539750004ED119 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 252AEF5924539750004ED119 /* Main.storyboard */; };
 		252AEF5D24539752004ED119 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 252AEF5C24539752004ED119 /* Assets.xcassets */; };
 		252AEF6024539752004ED119 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 252AEF5E24539752004ED119 /* LaunchScreen.storyboard */; };
@@ -42,6 +42,7 @@
 		25C27013245616A3009FFEE5 /* AuthorizationInjectorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C27012245616A3009FFEE5 /* AuthorizationInjectorTests.swift */; };
 		25C2701624562A28009FFEE5 /* PetsRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C2701524562A28009FFEE5 /* PetsRouterTests.swift */; };
 		25C2701824562EF9009FFEE5 /* BreedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C2701724562EF9009FFEE5 /* BreedTests.swift */; };
+		25C2701A24563519009FFEE5 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 25C2701924563519009FFEE5 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,7 +67,7 @@
 		250C31622454F8E4002D458E /* AuthorizationInjector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationInjector.swift; sourceTree = "<group>"; };
 		252AEF5024539750004ED119 /* Pets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pets.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		252AEF5324539750004ED119 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		252AEF5724539750004ED119 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		252AEF5724539750004ED119 /* PetsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetsViewController.swift; sourceTree = "<group>"; };
 		252AEF5A24539750004ED119 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		252AEF5C24539752004ED119 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		252AEF5F24539752004ED119 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -92,6 +93,7 @@
 		25C27012245616A3009FFEE5 /* AuthorizationInjectorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationInjectorTests.swift; sourceTree = "<group>"; };
 		25C2701524562A28009FFEE5 /* PetsRouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetsRouterTests.swift; sourceTree = "<group>"; };
 		25C2701724562EF9009FFEE5 /* BreedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedTests.swift; sourceTree = "<group>"; };
+		25C2701924563519009FFEE5 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +146,7 @@
 		252AEF4724539750004ED119 = {
 			isa = PBXGroup;
 			children = (
+				25C2701924563519009FFEE5 /* README.md */,
 				252AEF5224539750004ED119 /* Pets */,
 				252AEF6924539752004ED119 /* PetsTests */,
 				252AEF5124539750004ED119 /* Products */,
@@ -211,7 +214,7 @@
 		25B5E21D24539D3D003695E6 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				252AEF5724539750004ED119 /* ViewController.swift */,
+				252AEF5724539750004ED119 /* PetsViewController.swift */,
 				25B5E22B24545E1C003695E6 /* PetTableViewCell.swift */,
 				25B5E22D24545E61003695E6 /* TemperamentCollectionViewCell.swift */,
 			);
@@ -392,6 +395,7 @@
 			files = (
 				252AEF6024539752004ED119 /* LaunchScreen.storyboard in Resources */,
 				252AEF5D24539752004ED119 /* Assets.xcassets in Resources */,
+				25C2701A24563519009FFEE5 /* README.md in Resources */,
 				252AEF5B24539750004ED119 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -412,7 +416,7 @@
 			files = (
 				250C315A24548FB1002D458E /* ViewModelBuilder.swift in Sources */,
 				25B5E21C24539D35003695E6 /* ErrorViewControllerFactory.swift in Sources */,
-				252AEF5824539750004ED119 /* ViewController.swift in Sources */,
+				252AEF5824539750004ED119 /* PetsViewController.swift in Sources */,
 				250C314F24547F5D002D458E /* PetsInteractor.swift in Sources */,
 				25B5E2252453A2EE003695E6 /* BreedService.swift in Sources */,
 				25B5E2272453B38A003695E6 /* Environment.swift in Sources */,

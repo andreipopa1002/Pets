@@ -5,7 +5,7 @@ import NetworkingS
 final class PetsViewControllerFactory {
     func viewController() -> UIViewController {
         let view = UIStoryboard.init(name: "Main", bundle: .main)
-        .instantiateViewController(identifier: "PetsViewController") as! ViewController
+        .instantiateViewController(identifier: "PetsViewController") as! PetsViewController
 
         let interactor = PetsInteractor(
             breedService: BreedService(client: decodingClient()),
